@@ -1,0 +1,87 @@
+<html >
+<head>
+ <style>
+        body {
+            
+            
+            align-items: center;
+            justify-content: center;
+         
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="removeMultiplesOfThree()">Remove Multiples of 3</button>
+    <button onclick="addNumbersToArray()">Add Numbers 100-150</button>
+    <button onclick="addThreeToEach()">Add 3 to Each</button>
+    <button onclick="printIndexRange()">Print Index 20-40</button>
+    <button onclick="shuffleAndSort()">Shuffle and Sort</button>
+    
+    <script>
+      function Array(start, end) {
+	  let arr=[];
+	  for(var i=start;i<=end;i++){
+	  arr.push(i);
+	  }
+	  return arr;
+	  }
+       
+        function removeMultiplesOfThree() {
+            var arr1 = [];
+			for (var i=0 ; i<101;i++){
+			if(i%3!=0){arr1.push(i);}
+			}
+            console.log(arr1);
+        }
+        
+        function addNumbersToArray() {
+            let arr = Array(0,100);
+			for(var i = 101;i<=150;i++){
+			arr.push(i);
+			}
+            
+            console.log(arr);
+        }
+        
+        function addThreeToEach() {
+            let arr = Array(0, 100);
+			for(var i =0 ; i< arr.length;i++)
+			{
+			arr[i]=arr[i]+3;
+			}
+            console.log(arr);
+        }
+        
+        function printIndexRange() {
+            let arr = Array(0, 100);
+            console.log(arr.slice(20, 41));
+        }
+        
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        
+        function shuffleAndSort() {
+            let arr = Array(0, 100);
+            shuffleArray(arr);
+            console.log("Shuffled Array:", arr);
+            arr.sort((a, b) => b - a);
+            console.log("Sorted Array:", arr);
+        }
+    </script>
+</body>
+</html>
